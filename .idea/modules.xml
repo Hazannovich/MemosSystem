@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MemoSystem.iml" filepath="$PROJECT_DIR$/MemoSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MemosSystem.iml" filepath="$PROJECT_DIR$/MemosSystem.iml" />
     </modules>
   </component>
 </project>

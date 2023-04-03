@@ -4,13 +4,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MemoSystem extends Application {
+public class MemosSystem extends Application {
 
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MemoSystem.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MemosSystem.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        stage.setTitle("MemoSystem");
+        stage.setTitle("MemosSystem");
         stage.setScene(scene);
         stage.show();
     }
