@@ -32,16 +32,48 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MemosSystemController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="628.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MemosSystemController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-         <children>
-            <Button layoutX="293.0" layoutY="328.0" mnemonicParsing="false" text="Button" />
-         </children>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="367.0" prefWidth="623.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Ellipse fill="#88d663" layoutX="60.0" layoutY="23.0" radiusX="38.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE">
+               <effect>
+                  <BoxBlur width="59.32" />
+               </effect>
+            </Ellipse>
+            <ComboBox fx:id="daysBox" editable="true" layoutY="109.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="60.0" promptText="01" visibleRowCount="31" />
+            <ComboBox fx:id="monthsBox" editable="true" layoutX="65.0" layoutY="109.0" prefHeight="26.0" prefWidth="60.0" promptText="01" visibleRowCount="12" />
+            <Button fx:id="getMemoBtn" disable="true" layoutX="211.0" layoutY="109.0" mnemonicParsing="false" onAction="#getMemoBtnHandler" prefHeight="26.0" prefWidth="60.0" text="Search" />
+            <TextArea fx:id="memoField" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="222.0" prefWidth="383.0" AnchorPane.leftAnchor="0.0" />
+            <Button fx:id="saveBtn" layoutX="386.0" layoutY="336.0" mnemonicParsing="false" onAction="#saveBtnHandler" prefHeight="26.0" prefWidth="76.0" text="Save" />
+            <ComboBox fx:id="yearsBox" editable="true" layoutX="130.0" layoutY="109.0" prefHeight="26.0" prefWidth="76.0" promptText="2022" visibleRowCount="22" />
+            <Label contentDisplay="TOP" layoutX="26.0" layoutY="5.0" prefHeight="32.0" prefWidth="70.0" text="Memos" textAlignment="CENTER">
+               <font>
+                  <Font size="21.034" />
+               </font>
+            </Label>
+            <Label layoutX="1.0" layoutY="92.0" prefHeight="17.0" prefWidth="30.0" text="Day" />
+            <Label layoutX="131.0" layoutY="92.0" prefHeight="17.0" prefWidth="36.0" text="Year" />
+            <Label layoutX="66.0" layoutY="92.0" prefHeight="17.0" prefWidth="43.0" text="Month" />
+            <TextField fx:id="fileNameField" layoutX="388.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Insert file name" />
+            <Button fx:id="fileBtn" layoutX="530.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#fileBtnHandler" prefHeight="26.0" prefWidth="88.0" text="Open/Create" />
+            <Label fx:id="errorMsgLabel" layoutX="388.0" layoutY="175.0" prefHeight="17.0" prefWidth="230.0" textFill="#69cb3b" />
+      </children>
     </AnchorPane>
   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </VBox>
