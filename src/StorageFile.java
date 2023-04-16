@@ -1,18 +1,21 @@
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
 public class StorageFile {
     private boolean isNewFile;
-    private File storageFile;
+    private final File storageFile;
+    private int splitLimit;
     private Map<String, String> storageMap;
 
     public StorageFile(String filePath) throws IOException {
         storageMap = new HashMap<>();
         storageFile = getOrCreateFile(filePath);
+        splitLimit = 2;
         if (!isNewFile) {
             storageMap = StorageToMap(storageToStringList());
         }
@@ -20,7 +23,7 @@ public class StorageFile {
 
     private void insertToStorage(String key, String value) throws IOException {
         String startingChars = "\n";
-        if (value.equals("")){
+        if (value.equals("")) {
             return;
         }
         try (RandomAccessFile file = new RandomAccessFile(storageFile, "rw")) {
@@ -31,7 +34,6 @@ public class StorageFile {
                 isNewFile = false;
             }
             String jsonString = startingChars + entryToStorageStr(key, value);
-            System.out.println(jsonString);
             file.write(jsonString.getBytes());
         }
     }
@@ -39,12 +41,10 @@ public class StorageFile {
     public <K, V> void addToStorage(K key, V value) throws Exception {
         String keyStr = key.toString().trim();
         String valStr = value.toString().trim();
-        if (keyStr.contains(":") || valStr.contains(":")) {
-            throw new IllegalArgumentException("I don't know how to handle this cases:(");
-        }
+        getSplitLimit(keyStr);
         if (storageMap.containsKey(keyStr)) {
             String lineToRemove = lookupInStorage(keyStr);
-            if(lineToRemove.equals("")){
+            if (lineToRemove.equals("")) {
                 throw new IllegalArgumentException("You are holding it wrong.");
             }
             removeLine(lineToRemove);
@@ -57,15 +57,26 @@ public class StorageFile {
         PathType filePath = new PathType("tempFile", "txt");
         File tempFile = new File(filePath.toString());
         try (RandomAccessFile file = new RandomAccessFile(this.storageFile, "rw");
-             RandomAccessFile writer = new RandomAccessFile(tempFile, "rw");) {
-            String currentLine;
-            while ((currentLine = file.readLine()) != null) {
+             RandomAccessFile writer = new RandomAccessFile(tempFile, "rw")) {
+            String currentLine = file.readLine();
+            while ((currentLine) != null) {
                 if (!currentLine.equals(lineToRemove)) {
-                    writer.write(currentLine.getBytes());
+                    String lineToAdd = currentLine;
+                    currentLine = file.readLine();
+                    if (currentLine != null && !currentLine.equals(lineToRemove)) {
+                        lineToAdd += "\n";
+                    } else if (currentLine != null) {
+                        currentLine = file.readLine();
+                        if (currentLine != null) {
+                            lineToAdd += "\n";
+                        }
+                    }
+                    writer.write(lineToAdd.getBytes());
+                }
+                else {
+                    currentLine = file.readLine();
                 }
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -82,20 +93,34 @@ public class StorageFile {
         try (RandomAccessFile file = new RandomAccessFile(storageFile, "r")) {
             String line;
             while ((line = file.readLine()) != null) {
-                if (key.equals(getLineKey(line))) {
+                int start = getSplitLimitFromLine(line);
+                String cleanedLine = line.substring(start);
+                if (key.equals(getLineKey(cleanedLine))) {
                     return line;
                 }
             }
-        } catch (
-                IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return "";
     }
 
     private String getLineKey(String line) {
-        String[] keyValuePair = line.split(":");
-        return keyValuePair[0].trim();
+        StringBuilder key = new StringBuilder();
+        String[] keyValuePair = line.split(":", splitLimit);
+        for (int i = 0; i < splitLimit - 1; i++) {
+            key.append(keyValuePair[i]);
+        }
+        return key.toString();
+    }
+
+    private void getSplitLimit(String key) {
+        int countMatches = 2;
+        for (int i = 0; i < key.length(); i++)
+            if (key.charAt(i) == ':') {
+                countMatches++;
+            }
+        splitLimit = countMatches;
     }
 
     public <K, V> Map<K, V> readDataFromStorage(Function<String, K> createFormattedKey, Function<String, V> createFormattedValue) throws IOException {
@@ -107,7 +132,7 @@ public class StorageFile {
     }
 
     private ArrayList<String> storageToStringList() throws IOException {
-        ArrayList <String> StorageStringList = new ArrayList<>();
+        ArrayList<String> StorageStringList = new ArrayList<>();
         try (RandomAccessFile file = new RandomAccessFile(storageFile, "r")) {
             String line;
             while ((line = file.readLine()) != null) {
@@ -123,17 +148,41 @@ public class StorageFile {
         }
         Map<String, String> map = new HashMap<>();
         for (String keyValuePair : storageString) {
-            String[] keyValue = keyValuePair.split(":"); //TODO: FIX CASE WHERE INSIDE A STRING
-            String key = keyValue[0].trim().replaceAll("\\\\n","\n");
-            String value = keyValue[1].trim().replaceAll("\\\\n","\n");
+            int keyStartIndex = getSplitLimitFromLine(keyValuePair);
+            keyValuePair = keyValuePair.substring(keyStartIndex);
+            System.out.println(keyValuePair);
+            String key = getLineKey(keyValuePair).replaceAll("\\\\n", "\n");
+            String value = getLineValue(keyValuePair).replaceAll("\\\\n", "\n");
             map.put(key, value);
         }
         System.out.println(map);
         return map;
     }
 
+    private int getSplitLimitFromLine(String keyValuePair) {
+        StringBuilder limit = new StringBuilder();
+        int keyStartIndex = 1;
+        for (int i = 1; i < keyValuePair.length(); i++) {
+            char c = keyValuePair.charAt(i);
+            if (c == ']') {
+                keyStartIndex = i + 1;
+                break;
+            }
+            limit.append(c);
+        }
+        splitLimit = Integer.parseInt(limit.toString());
+        return keyStartIndex;
+    }
+
+    private String getLineValue(String line) {
+        String[] keyValuePair = line.split(":", splitLimit);
+        System.out.println(splitLimit);
+        System.out.println(Arrays.toString(keyValuePair));
+        return keyValuePair[splitLimit - 1];
+    }
+
     private String entryToStorageStr(String key, String value) {
-        return (key + ":" + value).replaceAll("\n", "\\\\n");
+        return ("[" + splitLimit + "]" + key + ":" + value).replaceAll("\n", "\\\\n");
     }
 
     public File getOrCreateFile(String filePath) throws IOException {

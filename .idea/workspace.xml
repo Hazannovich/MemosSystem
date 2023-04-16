@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d031a55-d4cd-4605-a714-05b34b96acd7" name="Changes" comment="would not handle storing files correctly">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/StorageFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/StorageFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StorageFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StorageFile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +89,7 @@
       <workItem from="1681323331824" duration="3017000" />
       <workItem from="1681326473293" duration="4184000" />
       <workItem from="1681553208471" duration="25172000" />
-      <workItem from="1681624621123" duration="4703000" />
+      <workItem from="1681624621123" duration="9472000" />
     </task>
     <task id="LOCAL-00001" summary="Project SetUp">
       <created>1680513579247</created>
@@ -110,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681629116651</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="would not handle storing files correctly">
+      <created>1681629357759</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681629357759</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
