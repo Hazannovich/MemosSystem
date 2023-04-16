@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d031a55-d4cd-4605-a714-05b34b96acd7" name="Changes" comment="Project SetUp">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PathType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StorageFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MemosSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MemosSystem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/CleanDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/CleanDate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/Memos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/Memos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystem.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystemController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CleanDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CleanDate.java" afterDir="false" />
@@ -50,14 +57,16 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/israelbarmack/Library/Mobile Documents/com~apple~CloudDocs/Desktop/JavaProjects/MemoSystem&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -70,7 +79,7 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="MemosSystem" />
       <module name="MemosSystem" />
-      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-19.0.2/Contents/Home/javafx-sdk-19.0.2.1/lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/Development/Java/JavaVirtualMachines/javafx-sdk-20/lib --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,7 +98,11 @@
       <workItem from="1680536241462" duration="8850000" />
       <workItem from="1681288160776" duration="5421000" />
       <workItem from="1681308455861" duration="490000" />
-      <workItem from="1681309008635" duration="4435000" />
+      <workItem from="1681309008635" duration="8749000" />
+      <workItem from="1681323331824" duration="3017000" />
+      <workItem from="1681326473293" duration="4184000" />
+      <workItem from="1681553208471" duration="25172000" />
+      <workItem from="1681624621123" duration="4138000" />
     </task>
     <task id="LOCAL-00001" summary="Project SetUp">
       <created>1680513579247</created>
@@ -98,14 +111,47 @@
       <option name="project" value="LOCAL" />
       <updated>1680513579247</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Project SetUp">
+      <created>1681318958448</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681318958448</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project SetUp" />
     <option name="LAST_COMMIT_MESSAGE" value="Project SetUp" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MemosSystemController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

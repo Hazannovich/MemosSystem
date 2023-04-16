@@ -10,19 +10,25 @@ public class CleanDate {
         date[2] = year;
     }
 
+
+    protected static CleanDate toStringToCleanDate(String date){
+        String[] cleanedDate = date.substring(1,date.length()-1).split(", ");
+        return new CleanDate(cleanedDate[0], cleanedDate[1], cleanedDate[2]);
+    }
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof CleanDate)){
+        if (!(obj instanceof CleanDate)) {
             return false;
         }
         return Arrays.equals(this.date, ((CleanDate) obj).date);
     }
+
     @Override
     public int hashCode() {
-        return 0;
+        return Arrays.hashCode(date);
     }
-    public String toString(){
+    @Override
+    public String toString() {
         return Arrays.toString(date);
     }
-
 }
