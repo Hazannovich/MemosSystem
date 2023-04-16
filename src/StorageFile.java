@@ -20,6 +20,9 @@ public class StorageFile {
 
     private void insertToStorage(String key, String value) throws IOException {
         String startingChars = "\n";
+        if (value.equals("")){
+            return;
+        }
         try (RandomAccessFile file = new RandomAccessFile(storageFile, "rw")) {
             long location = file.length();
             file.seek(location);
@@ -39,11 +42,11 @@ public class StorageFile {
         if (keyStr.contains(":") || valStr.contains(":")) {
             throw new IllegalArgumentException("I don't know how to handle this cases:(");
         }
-        if (valStr.equals("")) {
-            return;
-        }
         if (storageMap.containsKey(keyStr)) {
             String lineToRemove = lookupInStorage(keyStr);
+            if(lineToRemove.equals("")){
+                throw new IllegalArgumentException("You are holding it wrong.");
+            }
             removeLine(lineToRemove);
         }
         insertToStorage(keyStr, valStr);

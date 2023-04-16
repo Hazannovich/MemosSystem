@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d031a55-d4cd-4605-a714-05b34b96acd7" name="Changes" comment="Project SetUp">
-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PathType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StorageFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MemosSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MemosSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/CleanDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/CleanDate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/Memos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/Memos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystem.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemosSystem/MemosSystemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CleanDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CleanDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Memos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Memos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MemosSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemosSystemController.java" afterDir="false" />
+    <list default="true" id="4d031a55-d4cd-4605-a714-05b34b96acd7" name="Changes" comment="would not handle storing files correctly">
+      <change beforePath="$PROJECT_DIR$/src/StorageFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StorageFile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +87,7 @@
       <workItem from="1681323331824" duration="3017000" />
       <workItem from="1681326473293" duration="4184000" />
       <workItem from="1681553208471" duration="25172000" />
-      <workItem from="1681624621123" duration="4138000" />
+      <workItem from="1681624621123" duration="4703000" />
     </task>
     <task id="LOCAL-00001" summary="Project SetUp">
       <created>1680513579247</created>
@@ -118,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681318958448</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="would not handle storing files correctly">
+      <created>1681629116651</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681629116651</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +129,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project SetUp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project SetUp" />
+    <MESSAGE value="would not handle storing files correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="would not handle storing files correctly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
